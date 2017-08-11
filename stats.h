@@ -9,32 +9,117 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.h
+ * @brief function definitions to generate statistics of an array
  *
- * <Add Extended Description Here>
+ * This header file provides an abstraction of calculating mean, median, min,
+ *  and max of an array and printing the results
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Gilbert Guimaraes
+ * @date 10 August, 2017
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
+typedef enum {FALSE, TRUE } boolean;  //creates a boolean data type
 
-/* Add Your Declarations and Function Comments here */ 
+/* Add Your Declarations and Function Comments here */
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief sorts a data set
  *
- * <Add Extended Description Here>
+ * given a pointer to a char data array sorts the data set from
+ * largest to smallest and returns the sorted array
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param * array a char array data set
+ * @param count Number of elements in the array
  *
- * @return <Add Return Informaiton here>
+ * @return void
  */
+void sort_array(unsigned char  * array, int count);
 
+/**
+ * @brief calculates the median value of a set of data
+ *
+ * given a pointer to a char data array and the length of the array
+ * calculates the median
+ *
+ * @param * array a char array data set
+ * @param count Number of elements in the array
+ *
+ * @return Median of the data provided
+ */
+unsigned char find_median(unsigned char * array, int count);
+
+/**
+ * @brief prints the statistics of a data array
+ *
+ * given a pointer to a char data array prints the following:
+ *      minimum
+ *      maximum
+ *      median
+ *      mean
+ *
+ * @param minimum Minimum value of the array
+ * @param maximum Maximum value of the array
+ * @param median Median value of the array
+ * @param mean Mean value of the array
+ *
+ * @return void
+ */
+void print_statistics(unsigned char minimum, unsigned char maximum,
+                      unsigned char median, unsigned char mean);
+
+/**
+ * @brief prints an array to the console
+ *
+ * given a pointer to a char data array and the length of the array
+ * prints the array to the console
+ *
+ * @param * array a char array data set
+ * @param count Number of elements in the array
+ *
+ * @return void
+ */
+void print_array(unsigned char * array, int count);
+
+/**
+ * @brief calculates the mean value of a set of data
+ *
+ * given a pointer to a char data array and the length of the array
+ * calculates the mean
+ *
+ * @param * array a char array data set
+ * @param count Number of elements in the array
+ *
+ * @return Mean of the data provided
+ */
+unsigned char find_mean(unsigned char * array, int count);
+
+/**
+ * @brief finds the minimum value of a set of data
+ *
+ * given a pointer to a char data array and the length of the array
+ * determines the minimum value
+ *
+ * @param * array a char array data set
+ * @param count Number of elements in the array
+ *
+ * @return Minimum of the data provided
+ */
+unsigned char find_minimum(unsigned char * array, int count);
+
+/**
+ * @brief finds the maximum value of a set of data
+ *
+ * given a pointer to a char data array and the length of the array
+ * determines the maximum value
+ *
+ * @param * array a char array data set
+ * @param count Number of elements in the array
+ *
+ * @return Maximum of the data provided
+ */
+unsigned char find_maximum(unsigned char * array, int count);
 
 #endif /* __STATS_H__ */
